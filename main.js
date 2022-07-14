@@ -1,3 +1,4 @@
+// Burger Menu
 let menu = document.getElementById("menu");
 let actions = document.getElementById("actions");
 
@@ -10,6 +11,35 @@ function hundlMenu() {
   actions.classList.toggle("active");
 }
 
+// Scroll Top
+let btnUp = document.getElementById("back-to-top");
+
+window.onscroll = function () {
+  if (window.scrollY >= 400) {
+    btnUp.style.visibility = "visible";
+  } else {
+    btnUp.style.visibility = "hidden";
+  }
+  btnUp.onclick = function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  // Remove Menu Table On Scroll
+  menu.classList.remove("active");
+  actions.classList.remove("active");
+};
+
+let body = document.querySelector("section");
+
+body.onclick = () => {
+  menu.classList.remove("active");
+  actions.classList.remove("active");
+};
+
+// Animation Section Reveal
 window.addEventListener("scroll", reveal);
 
 function reveal() {
