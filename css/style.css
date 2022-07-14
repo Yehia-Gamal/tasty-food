@@ -80,6 +80,37 @@ ul {
 
 /* End Global Rules */
 
+/* Start Scroll top */
+.scrolltop {
+  position: fixed;
+  right: 1rem;
+  bottom: -20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem;
+  background: rgba(6, 156, 84, 0.5);
+  border-radius: 0.4rem;
+  z-index: 100;
+  transition: 0.4s;
+  visibility: hidden;
+}
+
+.scrolltop:hover {
+  background-color: var(--permery-color);
+}
+
+.scrolltop__icon {
+  font-size: 1.8rem;
+  color: var(--bg-color);
+}
+
+/* Show scrolltop */
+.show-scroll {
+  visibility: visible;
+  bottom: 1.5rem;
+}
+
 /* Start Header */
 header {
   position: fixed;
@@ -407,6 +438,7 @@ header #menu span {
   background-color: #ff274b;
 }
 
+/* MEDIA QUERIES MENU */
 @media (max-width: 767px) {
   header #menu {
     display: block;
@@ -460,7 +492,20 @@ header #menu span {
 }
 /* End burger Menu */
 
-/*  */
+/* Start Animation Section */
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+.reveal.Active {
+  transform: translateY(0);
+  opacity: 1;
+}
+/* End Animation Section */
+
+/* Start MEDIA QUERIES */
 @media (max-width: 767px) {
   .home {
     padding-top: 170px;
@@ -536,6 +581,4 @@ header #menu span {
     font-size: 17px;
   }
 }
-
-@media (max-width: 300px) {
-}
+/* End MEDIA QUERIES */
